@@ -1,0 +1,41 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="manipulator_transmissions" params="">
+
+    <!-- Transmission for joint1 -->
+    <transmission name="joint1_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint1">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="joint1_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <!-- Transmission for joint2 -->
+    <transmission name="joint2_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint2">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="joint2_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <!-- Transmission for joint3 -->
+    <transmission name="joint3_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint3">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="joint3_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </xacro:macro>
+</robot>

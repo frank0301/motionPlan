@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Epon">
+  <xacro:include filename="$(find manipulator_driver_sim)/urdf/manipulator_model2.urdf.xacro" />
+
+  <!-- 加载控制插件定义 -->
+  <xacro:arg name="simulation_controllers" default="" />
+  <!-- Gazebo 插件挂载 -->
+  <gazebo>
+    <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+      <parameters>$(arg simulation_controllers)</parameters>
+      <controller_manager_node_name>controller_manager</controller_manager_node_name>
+    </plugin>
+  </gazebo>
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>ign_ros2_control/IgnitionSystem</plugin>
+    </hardware>
+
+    <joint name="base_link_to_link1">
+        <!-- <command_interface name="velocity" /> -->
+        <command_interface name="position" />
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="link1_to_link2">
+        <!-- <command_interface name="velocity" /> -->
+        <command_interface name="position" />
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="link2_to_link3">
+        <!-- <command_interface name="velocity" /> -->
+        <command_interface name="position" />
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+    </joint>
+</ros2_control>
+  <!-- 插件挂载 -->
+
+</robot>

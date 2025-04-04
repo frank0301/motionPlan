@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="gazebo_sys">
+  <ros2_control name="GazeboSystem" type="system">
+      <hardware>
+        <plugin>ign_ros2_control/IgnitionSystem</plugin>
+      </hardware>
+
+      <joint name="base_link_to_link1">
+          <command_interface name="position" />
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="link1_to_link2">
+          <command_interface name="position" />
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="link2_to_link3">
+          <command_interface name="position" />
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+      </joint>
+  </ros2_control>
+
+</robot>

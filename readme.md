@@ -1,4 +1,4 @@
-ros2 service call /move_to_pose manipulator_interfaces/srv/MoveToPose "target_pose: {position: {x: -0.11, y: 0.56, z: 0.52}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}"
+
 
 ```
 ros2 service call /move_to_pose manipulator_interfaces/srv/MoveToPose "target_pose: {position: {x: -0.11, y: 0.56, z: 0.52}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}"
